@@ -12,9 +12,10 @@ using System;
 namespace ContosoUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20170826142048_namelength60")]
+    partial class namelength60
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,7 +63,6 @@ namespace ContosoUniversity.Migrations
                     b.Property<DateTime>("EnrollmentDate");
 
                     b.Property<string>("FirstMidName")
-                        .HasColumnName("FirstName")
                         .HasMaxLength(60);
 
                     b.Property<string>("LastName")
